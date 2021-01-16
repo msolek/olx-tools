@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "lib": ["dom", "es6", "es2017", "es2019", "esnext.asynciterable"],
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": "src",
+        "strict": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitAny": false,
+        "noImplicitReturns": false,
+        "strictPropertyInitialization": false,
+        "paths": {
+            "*": ["./*"],
+            "@/*": ["./*"]
+        },
+        "types": ["node"],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    
+    "exclude": ["node_modules"],
+    "include": ["./src/**/*.ts", "xd.ts"]
+}
