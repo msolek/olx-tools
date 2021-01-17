@@ -7,8 +7,7 @@ import * as log4js from "log4js";
 import * as routes from "./routes";
 
 const app = express();
-routes.register(app);
-const port = 5003; // default port to listen
+const port = 5003; // default p
 
 log4js.configure({
   appenders: {
@@ -29,20 +28,15 @@ const establishDatabaseConnection = async (): Promise<void> => {
     console.log(error);
   }
 };
+routes.register(app);
 
 // start the Express server
 app.listen(port, () => {
-  
-
   console.log(`server started at http://localhost:${port}`);
 });
 
 const bootstrap = async (): Promise<void> => {
-  console.log("bootstreap");
-
   await establishDatabaseConnection();
-
   await createExampleAnnouncements();
 };
-
 bootstrap();

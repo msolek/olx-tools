@@ -18,3 +18,14 @@
 [2021-01-17T16:37:19.272] [DEBUG] http - ::ffff:127.0.0.1 - - "GET // HTTP/1.1" 404 140 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
 [2021-01-17T16:37:22.935] [INFO] announcements - hello
 [2021-01-17T16:37:22.978] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:5003/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T16:47:31.560] [INFO] announcements - hello
+[2021-01-17T16:47:53.781] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 404 153 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T16:48:42.707] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 404 153 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T16:56:05.774] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/16 HTTP/1.1" 304 - "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T17:00:21.916] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement HTTP/1.1" 200 33476 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T17:03:27.517] [INFO] announcements - hello
+[2021-01-17T17:03:27.518] [DEBUG] http - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T17:03:31.950] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement HTTP/1.1" 304 - "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T17:30:10.073] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement HTTP/1.1" 200 37480 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T20:42:47.290] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 200 200 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T20:42:50.960] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 200 200 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"

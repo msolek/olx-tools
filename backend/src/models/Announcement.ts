@@ -30,8 +30,10 @@ class Announcement extends BaseEntity {
   @UpdateDateColumn({ type: "timestamp" })
   updatedAt: Date;
 
-  @OneToMany(() => AnnouncementData, (announcementId) => announcementId.id)
-  announcementDatas: AnnouncementData[];
+  @OneToMany(() => AnnouncementData, announcementData => announcementData.id, {
+    onDelete: 'CASCADE'
+  })
+  details: Array<AnnouncementData>;
 }
 
 export default Announcement;
