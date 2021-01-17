@@ -3,10 +3,11 @@ import "dotenv/config";
 import express from "express";
 import createDatabaseConnection from "@/database/createConnection";
 import createExampleAnnouncements from "@/database/createBlobData";
-import * as routes from "@/routes/announcement";
 import * as log4js from "log4js";
+import * as routes from "./routes";
 
 const app = express();
+routes.register(app);
 const port = 5003; // default port to listen
 
 log4js.configure({
@@ -21,8 +22,6 @@ log4js.configure({
 
 app.use(log4js.connectLogger(log4js.getLogger("http"), { level: "debug" }));
 
-
-
 const establishDatabaseConnection = async (): Promise<void> => {
   try {
     await createDatabaseConnection();
@@ -31,12 +30,9 @@ const establishDatabaseConnection = async (): Promise<void> => {
   }
 };
 
-
-routes.register(app);
-
 // start the Express server
 app.listen(port, () => {
-  console.log("app liste");
+  
 
   console.log(`server started at http://localhost:${port}`);
 });
