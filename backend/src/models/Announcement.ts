@@ -8,7 +8,7 @@ import {
     Entity
   } from "typeorm";
 import is from "@/utils/validations";
-import { AnnouncementData } from "./AnnouncementData";
+import AnnouncementData from "./AnnouncementData"
   
 @Entity()
 class Announcement extends BaseEntity {
@@ -32,7 +32,7 @@ class Announcement extends BaseEntity {
     updatedAt: Date;
 
     @OneToMany(() => AnnouncementData,
-     announcementDatas => announcementDatas.announcement
+     announcementDatas => announcementDatas.id,
      )
     announcementDatas: AnnouncementData[];
    

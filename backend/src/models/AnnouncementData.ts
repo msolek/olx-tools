@@ -1,16 +1,12 @@
-class AnnouncementData extends 
 import {
     BaseEntity,
     PrimaryGeneratedColumn,
     Column,
-    UpdateDateColumn,
     CreateDateColumn,
-    OneToMany,
-    Entity,
     ManyToOne
   } from "typeorm";
 import is from "@/utils/validations";
-import { Announcement } from "./Announcement";
+import  Announcement  from "./Announcement";
 
 class AnnouncementData extends BaseEntity {
     static validations = {
