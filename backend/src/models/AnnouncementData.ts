@@ -3,15 +3,15 @@ import {
     PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
+    Entity,
     ManyToOne
   } from "typeorm";
-import is from "@/utils/validations";
-import  Announcement  from "./Announcement";
-
+import  Announcement  from './Announcement'; 
+@Entity()
 class AnnouncementData extends BaseEntity {
-    static validations = {
-        price: [is.required()]
-    };
+    // static validations = {
+    //     price: is.required()
+    // };
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -25,7 +25,7 @@ class AnnouncementData extends BaseEntity {
     @ManyToOne(() => Announcement,
      announcement => announcement.id
      )
-    announcements: Announcement[];
+    announcement: Announcement[];
 }
 
 export default AnnouncementData;

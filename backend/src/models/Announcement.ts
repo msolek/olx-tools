@@ -7,22 +7,20 @@ import {
     OneToMany,
     Entity
   } from "typeorm";
-import is from "@/utils/validations";
-import AnnouncementData from "./AnnouncementData"
-  
+import AnnouncementData from './AnnouncementData';
+
 @Entity()
 class Announcement extends BaseEntity {
-    static validations = {
-        url: [is.required(), is.url()],
-    };
+
 
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column("text", { nullable: false })
+    //TODO: unique = true
+    @Column("varchar", { nullable: false, unique: false })
     url: string;
 
-    @Column("varchar")
+    @Column("varchar", { nullable: true })
     name: string;
 
     @Column("text", { nullable: true })
@@ -35,7 +33,7 @@ class Announcement extends BaseEntity {
     updatedAt: Date;
 
     @OneToMany(() => AnnouncementData,
-     announcementDatas => announcementDatas.id,
+    announcementId => announcementId.id,
      )
     announcementDatas: AnnouncementData[];
    

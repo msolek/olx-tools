@@ -1,18 +1,17 @@
 import { FindOneOptions } from "typeorm/find-options/FindOneOptions";
 
-import { Announcement, AnnouncementData} from "@/models";
-import { EntityNotFoundError, BadUserInputError } from "@/errors/customErrors";
-import { generateErrors } from "@/utils/validations"; 
+import { Announcement, AnnouncementData } from "@/models";
+import { EntityNotFoundError } from "@/errors/customErrors";
 
 type EntityConstructor =
   | typeof Announcement
   | typeof AnnouncementData;
- 
+
 type EntityInstance = Announcement | AnnouncementData;
 
 const entities: { [key: string]: EntityConstructor } = {
     Announcement,
-    AnnouncementData
+    AnnouncementData,
 };
 
 export const findEntityOrThrow = async <T extends EntityConstructor>(
@@ -30,15 +29,7 @@ export const findEntityOrThrow = async <T extends EntityConstructor>(
 export const validateAndSaveEntity = async <T extends EntityInstance>(
   instance: T
 ): Promise<T> => {
-  const Constructor = entities[instance.constructor.name];
-
-  if ("validations" in Constructor) {
-    const errorFields = generateErrors(instance, Constructor.validations);
-
-    if (Object.keys(errorFields).length > 0) {
-      throw new BadUserInputError({ fields: errorFields });
-    }
-  }
+    console.log(JSON.stringify(entities));
   return instance.save() as Promise<T>;
 };
 
@@ -61,10 +52,10 @@ export const updateEntity = async <T extends EntityConstructor>(
 };
 
 export const deleteEntity = async <T extends EntityConstructor>(
-    Constructor: T,
-    id: number | string
-  ): Promise<InstanceType<T>> => {
-    const instance = await findEntityOrThrow(Constructor, id);
-    await instance.remove();
-    return instance;
-  };
+  Constructor: T,
+  id: number | string
+): Promise<InstanceType<T>> => {
+  const instance = await findEntityOrThrow(Constructor, id);
+  await instance.remove();
+  return instance;
+};
