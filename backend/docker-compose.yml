@@ -1,0 +1,31 @@
+version: "3"
+services:
+  olx_psql:
+    container_name: olx_psql
+    image: "postgres:9.6.17"
+    restart: always
+    environment:
+      POSTGRES_USER: olx_user
+      POSTGRES_PASSWORD: olx_password
+      POSTGRES_MULTIPLE_DATABASES: olx_db,olx_db_test
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d
+      - olx-pgdata:/var/lib/postgresql/data/
+
+  pgweb:
+    container_name: pgweb
+    restart: always
+    image: sosedoff/pgweb
+    ports:
+      - "8081:8081"
+    links:
+      - olx_psql:olx_psql
+    environment:
+      - DATABASE_URL=postgres://olx_user:olx_password@olx_psql:5432/olx_db?sslmode=disable
+    depends_on:
+      - olx_psql
+
+volumes:
+  olx-pgdata:
