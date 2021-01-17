@@ -1,42 +1,37 @@
 import {
-    BaseEntity,
-    PrimaryGeneratedColumn,
-    Column,
-    UpdateDateColumn,
-    CreateDateColumn,
-    OneToMany,
-    Entity
-  } from "typeorm";
-import AnnouncementData from './AnnouncementData';
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  Column,
+  UpdateDateColumn,
+  CreateDateColumn,
+  OneToMany,
+  Entity,
+} from "typeorm";
+import AnnouncementData from "./AnnouncementData";
 
 @Entity()
 class Announcement extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
 
+  // TODO: unique = true
+  @Column("varchar", { nullable: false, unique: false })
+  url: string;
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @Column("varchar", { nullable: true })
+  name: string;
 
-    //TODO: unique = true
-    @Column("varchar", { nullable: false, unique: false })
-    url: string;
+  @Column("text", { nullable: true })
+  description: string | null;
 
-    @Column("varchar", { nullable: true })
-    name: string;
+  @CreateDateColumn({ type: "timestamp" })
+  createdAt: Date;
 
-    @Column("text", { nullable: true })
-    description: string | null;
+  @UpdateDateColumn({ type: "timestamp" })
+  updatedAt: Date;
 
-    @CreateDateColumn({ type: "timestamp" })
-    createdAt: Date;
-
-    @UpdateDateColumn({ type: "timestamp" })
-    updatedAt: Date;
-
-    @OneToMany(() => AnnouncementData,
-    announcementId => announcementId.id,
-     )
-    announcementDatas: AnnouncementData[];
-   
+  @OneToMany(() => AnnouncementData, (announcementId) => announcementId.id)
+  announcementDatas: AnnouncementData[];
 }
 
 export default Announcement;

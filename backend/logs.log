@@ -1,0 +1,17 @@
+[2021-01-17T14:05:47.582] [ERROR] announcements - GET request /announcement
+[2021-01-17T14:05:47.587] [INFO] http - ::ffff:127.0.0.1 - - "GET /announcement HTTP/1.1" 200 13831 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:06:07.196] [ERROR] http - ::ffff:127.0.0.1 - - "GET /announcement/sdf HTTP/1.1" 404 155 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:06:21.563] [ERROR] http - ::ffff:127.0.0.1 - - "GET /announcement/sdf HTTP/1.1" 404 155 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:06:39.287] [ERROR] announcements - GET request /announcement
+[2021-01-17T14:06:59.573] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/sdf HTTP/1.1" 404 155 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:07:48.704] [ERROR] http - ::ffff:127.0.0.1 - - "GET /announcement/sdf HTTP/1.1" 404 155 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:07:53.325] [ERROR] announcements - GET request /announcement
+[2021-01-17T14:07:53.328] [INFO] http - ::ffff:127.0.0.1 - - "GET /announcement/ HTTP/1.1" 200 15279 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:09:30.004] [ERROR] announcements - GET request /announcement
+[2021-01-17T14:09:30.008] [INFO] http - ::ffff:127.0.0.1 - - "GET /announcement/ HTTP/1.1" 200 16004 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:12:21.370] [ERROR] announcements - GET request /announcement
+[2021-01-17T14:12:21.375] [INFO] http - ::ffff:127.0.0.1 - - "GET /announcement/ HTTP/1.1" 200 16732 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:13:24.438] [INFO] announcements - hello world
+[2021-01-17T14:13:24.441] [WARN] http - ::ffff:127.0.0.1 - - "GET / HTTP/1.1" 304 - "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:34:29.308] [ERROR] http - ::ffff:127.0.0.1 - - "GET /sdf HTTP/1.1" 404 142 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-17T14:35:17.599] [ERROR] http - ::ffff:127.0.0.1 - - "GET /sdf HTTP/1.1" 404 142 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"

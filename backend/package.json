@@ -22,9 +22,11 @@
     "ts-jest": "^26.4.4"
   },
   "dependencies": {
+    "@types/log4js": "^2.3.5",
     "dotenv": "^8.2.0",
     "dtslint": "^4.0.6",
     "express": "^4.17.1",
+    "log4js": "^6.3.0",
     "module-alias": "^2.2.2",
     "nodemon": "^2.0.7",
     "pg": "^8.5.1",

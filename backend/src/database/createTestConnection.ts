@@ -1,7 +1,6 @@
 import { createConnection, Connection, ConnectionOptions } from "typeorm";
 import * as models from "@/models";
 
-
 const connectionOptions: ConnectionOptions = {
   type: "postgres",
   host: process.env.DB_HOST,
@@ -11,7 +10,7 @@ const connectionOptions: ConnectionOptions = {
   database: process.env.DB_TEST_DATABASE,
   entities: Object.values(models),
   synchronize: true,
-  //dropSchema: true
+  // dropSchema: true
 };
 
 const createTestDatabaseConnection = (): Promise<Connection> =>

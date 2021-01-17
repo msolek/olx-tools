@@ -3,15 +3,13 @@ import { FindOneOptions } from "typeorm/find-options/FindOneOptions";
 import { Announcement, AnnouncementData } from "@/models";
 import { EntityNotFoundError } from "@/errors/customErrors";
 
-type EntityConstructor =
-  | typeof Announcement
-  | typeof AnnouncementData;
+type EntityConstructor = typeof Announcement | typeof AnnouncementData;
 
 type EntityInstance = Announcement | AnnouncementData;
 
 const entities: { [key: string]: EntityConstructor } = {
-    Announcement,
-    AnnouncementData,
+  Announcement,
+  AnnouncementData,
 };
 
 export const findEntityOrThrow = async <T extends EntityConstructor>(
@@ -29,7 +27,7 @@ export const findEntityOrThrow = async <T extends EntityConstructor>(
 export const validateAndSaveEntity = async <T extends EntityInstance>(
   instance: T
 ): Promise<T> => {
-    console.log(JSON.stringify(entities));
+  console.log(JSON.stringify(entities));
   return instance.save() as Promise<T>;
 };
 

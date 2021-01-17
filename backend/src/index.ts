@@ -1,53 +1,53 @@
 require("module-alias").addAlias("@", __dirname);
 import "dotenv/config";
-import {getRepository} from "typeorm";
 import express from "express";
-import { Announcement }from '@/models';
 import createDatabaseConnection from "@/database/createConnection";
-import createExampleAnnouncements from '@/database/createBlobData';
+import createExampleAnnouncements from "@/database/createBlobData";
+import * as routes from "@/routes/announcement";
+import * as log4js from "log4js";
+
 const app = express();
 const port = 5003; // default port to listen
 
-const establishDatabaseConnection = async (): Promise<void> => {
-    try {
-      await createDatabaseConnection();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+log4js.configure({
+  appenders: {
+    file: { type: "file", filename: "./logs.log" },
+    console: { type: "console" },
+  },
+  categories: {
+    default: { appenders: ["file", "console"], level: "debug" },
+  },
+});
 
-// define a route handler for the default home page
-app.get( "/", ( _, res ) => {
-    res.send( "Hello sdf!" );
-} );
+app.use(log4js.connectLogger(log4js.getLogger("http"), { level: "debug" }));
+
+const establishDatabaseConnection = async (): Promise<void> => {
+  console.log("establish db conn");
+
+  try {
+    await createDatabaseConnection();
+    console.log("connection created");
+  } catch (error) {
+    console.log("error creating connection");
+    console.log(error);
+  }
+};
+
+routes.register(app);
 
 // start the Express server
-app.listen( port, () => {
-    console.log( `server started at http://localhost:${ port }` );
-} );
+app.listen(port, () => {
+  console.log("app liste");
 
-app.get("/announcement", async(_, res:any) => {
-    console.log()
-    try { 
-         let re = getRepository(Announcement);
-         let d = await re.find({select: ["id", "url"]});
-        console.log("re" + d)
-     
-
-
-        res.json(d);
-    } catch (error) {
-        console.log(error);
-        res.send("sth went wrong");
-    }
-
+  console.log(`server started at http://localhost:${port}`);
 });
 
 const bootstrap = async (): Promise<void> => {
-  
-    await establishDatabaseConnection();
-    
-    await createExampleAnnouncements();
-  };
-  
-  bootstrap();
+  console.log("bootstreap");
+
+  await establishDatabaseConnection();
+
+  await createExampleAnnouncements();
+};
+
+bootstrap();
