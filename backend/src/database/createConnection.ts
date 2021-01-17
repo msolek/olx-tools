@@ -1,6 +1,6 @@
-import { getConnectionManager, createConnection, Connection, ConnectionOptions } from "typeorm";
+import { createConnection, Connection, ConnectionOptions } from "typeorm";
+
 import * as models from "@/models";
-const connectionManager = getConnectionManager();
 
 const commonConfig: ConnectionOptions = {
   type: "postgres",

@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json);
 //TODO: 
 app.get("/announcement", async(_, res) => {
+    console.log()
     try { let listOfAllAnnoucements: any =  
         getManager().find(Announcement);
         res.json(listOfAllAnnoucements);
