@@ -4,7 +4,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
+  ManyToOne
 } from "typeorm";
 import Announcement from "./Announcement";
 @Entity()

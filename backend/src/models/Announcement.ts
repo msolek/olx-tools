@@ -5,7 +5,7 @@ import {
   UpdateDateColumn,
   CreateDateColumn,
   OneToMany,
-  Entity,
+  Entity
 } from "typeorm";
 import AnnouncementData from "./AnnouncementData";
 

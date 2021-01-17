@@ -21,17 +21,16 @@ log4js.configure({
 
 app.use(log4js.connectLogger(log4js.getLogger("http"), { level: "debug" }));
 
-const establishDatabaseConnection = async (): Promise<void> => {
-  console.log("establish db conn");
 
+
+const establishDatabaseConnection = async (): Promise<void> => {
   try {
     await createDatabaseConnection();
-    console.log("connection created");
   } catch (error) {
-    console.log("error creating connection");
     console.log(error);
   }
 };
+
 
 routes.register(app);
 
