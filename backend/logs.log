@@ -29,3 +29,5 @@
 [2021-01-17T17:30:10.073] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement HTTP/1.1" 200 37480 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
 [2021-01-17T20:42:47.290] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 200 200 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
 [2021-01-17T20:42:50.960] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 200 200 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-18T06:43:18.549] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 200 3 "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"
+[2021-01-18T06:44:48.082] [DEBUG] http - ::ffff:127.0.0.1 - - "GET /announcement/1 HTTP/1.1" 304 - "" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0"

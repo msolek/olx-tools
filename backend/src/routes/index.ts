@@ -1,9 +1,8 @@
 import * as express from "express";
 
 import { Announcement } from "@/models";
-import { getRepository, Connection } from "typeorm";
-import createDatabaseConnection from '@/database/createConnection';
-
+import { getRepository } from "typeorm";
+import  createDatabaseConnection  from "@/database/createConnection";
 const log = require("log4js").getLogger("announcements");
 
 export const register = (app: express.Application) => {
@@ -25,7 +24,11 @@ export const register = (app: express.Application) => {
   });
   app.get("/announcement/:id", async (_, res) => {
 
-    console.log(announcementWithId);
-    res.json(announcementWithId);
+createDatabaseConnection().then(async (connection:any) => {
+  connection.manager.find(Announcement);
+});
+
+
+   res.json("d");
   });
 };
