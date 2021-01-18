@@ -24,7 +24,6 @@ export const register = (app: express.Application) => {
     }
   });
   app.get("/announcement/:id", async (_, res) => {
-    const repo = createDatabaseConnection.
 
     console.log(announcementWithId);
     res.json(announcementWithId);

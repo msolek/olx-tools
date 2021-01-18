@@ -6,6 +6,8 @@
 
 # environment config
 **/.env
+**/.vscode
+
 
 # production
 **/dist
@@ -23,3 +25,6 @@
 **/*.njsproj
 **/*.sln
 **/*.sw?
+
+# Logs 
+**/.logs.log*
